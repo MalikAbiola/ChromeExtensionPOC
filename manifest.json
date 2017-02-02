@@ -1,0 +1,31 @@
+{
+  "name": "Chrome Extension POC (By Malik Abiola)",
+  "description": "This extension attempts to adds some functions of Mailbutler.io to gmail",
+  "version": "1.0.0",
+  "icons": { "128": "Images/email_icon.png" },
+  "background": {
+    "scripts": ["JS/background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [ "http://*/*", "https://*/*"],
+      "js": [
+        "JS/jquery-3.1.1.min.js",
+        "JS/content-script.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "http://mail.google.com/mail/*",
+    "https://mail.google.com/mail/*"
+  ],
+  "page_action": {
+    "default_title": "Mailbuttler",
+    "default_icon": { "32" : "Images/email_icon.png" },
+    "default_popup": "Html/popup.html"
+  },
+  "manifest_version": 2
+}

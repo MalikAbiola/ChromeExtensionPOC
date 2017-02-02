@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mailbuttler Settings</title>
+    <style>
+        body {
+            font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+            font-size: 100%;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h3>MailButtler Settings</h3>
+    <form method="post" id="settings_form" action="">
+        <input type="checkbox" id="activate_schedule">
+        <label for="activate_schedule">Activate Schedule</label>
+        <input id="activate_tracking" type="checkbox">
+        <label for="activate_tracking">Track Sent Messages</label>
+        <input type="submit" value="Save">
+    </form>
+    <div class="hidden" id="save_settings_message">
+        Settings Saved.
+    </div>
+
+    <script src="../JS/jquery-3.1.1.min.js"></script>
+    <script src="../JS/popup.js"></script>
+</body>
+</html>
