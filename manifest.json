@@ -5,21 +5,30 @@
   "icons": { "128": "Images/email_icon.png" },
   "background": {
     "scripts": ["JS/background.js"],
-    "persistent": true
+    "persistent": false
   },
   "content_scripts": [
     {
-      "matches": [ "http://*/*", "https://*/*"],
+      "matches": [
+        "http://mail.google.com/mail/*",
+        "https://mail.google.com/mail/*"
+      ],
       "js": [
-        "JS/jquery-3.1.1.min.js",
-        "JS/arrive.min.js",
+        "JS/Libraries/jquery-3.1.1.min.js",
+        "JS/Libraries/arrive.min.js",
+        "JS/Libraries/flatpickr/flatpickr.min.js",
         "JS/content-script.js"
+      ],
+      "css": [
+        "CSS/extension_styles.css",
+        "JS/Libraries/flatpickr/flatpickr.min.css"
       ]
     }
   ],
   "permissions": [
     "activeTab",
     "declarativeContent",
+    "storage",
     "http://mail.google.com/mail/*",
     "https://mail.google.com/mail/*"
   ],
@@ -28,5 +37,11 @@
     "default_icon": { "32" : "Images/email_icon.png" },
     "default_popup": "Html/popup.html"
   },
+  "web_accessible_resources": [
+    "CSS/extension_styles.css",
+    "JS/Libraries/flatpickr/flatpickr.min.css",
+    "JS/Libraries/flatpickr/flatpickr.min.js",
+    "Html/scheduler.html"
+  ],
   "manifest_version": 2
 }

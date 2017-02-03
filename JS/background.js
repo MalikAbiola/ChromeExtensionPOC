@@ -1,7 +1,4 @@
 
-var activateSchedule = false;
-var trackMessage = false;
-
 // Action when tabs is switched. To determine if to activate extension or not.
 chrome.runtime.onInstalled.addListener(function() {
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
@@ -19,16 +16,3 @@ chrome.runtime.onInstalled.addListener(function() {
         ]);
     });
 });
-
-var settings = {
-    "save" : function (schedule, track) {
-        activateSchedule = schedule == "on";
-        trackMessage = track == "on";
-    },
-    "get" : function () {
-        return {
-            "schedule" : activateSchedule,
-            "track" : trackMessage
-        };
-    }
-};

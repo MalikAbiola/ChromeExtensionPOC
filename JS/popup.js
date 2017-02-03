@@ -1,23 +1,32 @@
 /**
  * Popup Page Form Action.
  */
-
-var bg = chrome.extension.getBackgroundPage();
+var storageApi = chrome.storage.sync;
 
 $(document).ready(function () {
-    var settings = bg.settings.get();
-
-    $("#activate_schedule").prop("checked", settings.schedule);
-    $("#activate_tracking").prop("checked", settings.track);
+    storageApi.get(
+        {
+            activateSchedule: false,
+            trackMessage: false
+        },
+        function (savedSettings) {
+            $("#activate_schedule").prop("checked", savedSettings.activateSchedule);
+            $("#activate_tracking").prop("checked", savedSettings.trackMessage);
+        }
+    );
 
     $("#settings_form").submit(function(e) {
         e.preventDefault();
-
-        bg.settings.save($("#activate_schedule").val(), $("#activate_tracking").val());
-
-        $(this).addClass("hidden");
-        $("#save_settings_message").html("Saved.");
-
-        $("#save_settings_message").removeClass("hidden");
+        var form = $(this);
+        storageApi.set(
+            {
+                activateSchedule: $("#activate_schedule").prop("checked"),
+                trackMessage: $("#activate_tracking").prop("checked")
+            },
+            function () {
+                form.addClass("hidden");
+                $("#save_settings_message").html("Saved.").removeClass("hidden");
+            }
+        );
     });
 });

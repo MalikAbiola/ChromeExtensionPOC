@@ -16,17 +16,19 @@
 <body>
     <h3>MailButtler Settings</h3>
     <form method="post" id="settings_form" action="">
-        <input type="checkbox" id="activate_schedule">
+        <input type="checkbox" id="activate_schedule" name="activate_schedule">
         <label for="activate_schedule">Activate Schedule</label>
-        <input id="activate_tracking" type="checkbox">
+
+        <input name="activate_tracking" id="activate_tracking" type="checkbox">
         <label for="activate_tracking">Track Sent Messages</label>
+
         <input type="submit" value="Save">
     </form>
     <div class="hidden" id="save_settings_message">
         Settings Saved.
     </div>
 
-    <script src="../JS/jquery-3.1.1.min.js"></script>
+    <script src="../JS/Libraries/jquery-3.1.1.min.js"></script>
     <script src="../JS/popup.js"></script>
 </body>
 </html>
