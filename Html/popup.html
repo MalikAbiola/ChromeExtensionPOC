@@ -3,31 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Mailbuttler Settings</title>
-    <style>
-        body {
-            font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-            font-size: 100%;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="../CSS/extension_styles.css">
 </head>
 <body>
-    <h3>MailButtler Settings</h3>
-    <form method="post" id="settings_form" action="">
-        <input type="checkbox" id="activate_schedule" name="activate_schedule">
-        <label for="activate_schedule">Activate Schedule</label>
+    <div id="extension_settings">
+        <h3>MailButtler Settings</h3>
+        <form method="post" id="settings_form" action="">
+            <div>
+                <input type="checkbox" id="activate_schedule" name="activate_schedule">
+                <label for="activate_schedule">Activate Schedule</label>
 
-        <input name="activate_tracking" id="activate_tracking" type="checkbox">
-        <label for="activate_tracking">Track Sent Messages</label>
+            </div>
+            <div>
+                <input name="activate_tracking" id="activate_tracking" type="checkbox">
+                <label for="activate_tracking">Track Sent Messages</label>
+            </div>
+            <div>
+                <input type="submit" value="Save" id="save_extension_settings">
+            </div>
+        </form>
 
-        <input type="submit" value="Save">
-    </form>
+    </div>
     <div class="hidden" id="save_settings_message">
         Settings Saved.
     </div>
-
     <script src="../JS/Libraries/jquery-3.1.1.min.js"></script>
     <script src="../JS/popup.js"></script>
 </body>

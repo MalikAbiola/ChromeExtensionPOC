@@ -1,15 +1,14 @@
-.extensionScheduleBtn {
+.extension-schedule-btn {
     text-align:center;
-    webkit-border-radius: 2px;
+    -webkit-border-radius: 2px;
     border-radius: 2px;
     cursor: default;
     font-size: 11px;
     font-family: 'Open Sans', Helvetica, Arial, 'Liberation Sans', sans-serif;
     font-weight: bold;
-    text-align: center;
-    margin-right: 16px;
-    height: 27px;
-    line-height: 27px;
+    margin-right: 10px;
+    height: 29px;
+    line-height: 28px;
     min-width: 54px;
     outline: 0;
     padding: 0 8px;
@@ -17,21 +16,46 @@
     display: inline-block;
     -webkit-box-shadow: none;
     box-shadow: none;
-    background-color: #4d90fe;
-    background-image: -webkit-linear-gradient(top,#4d90fe,#4787ed);
-    background-image: linear-gradient(top,#4d90fe,#4787ed);
-    border: 1px solid #3079ed;
+    background-color: #47fe41;
+    background-image: -webkit-linear-gradient(top,#47fe41, #36b02f);
+    background-image: linear-gradient(top,#47fe41,#36b02f);
+    border: 1px solid #36b02f;
     color: #fff;
 }
 
-.extensionScheduleBtn:hover {
+.extension-schedule-btn:hover {
     -webkit-box-shadow: none;
     box-shadow: none;
-    background-color: #357ae8;
-    background-image: -webkit-linear-gradient(top,#4d90fe,#357ae8);
-    background-image: linear-gradient(top,#4d90fe,#357ae8);
-    border: 1px solid #2f5bb7;
-    border-bottom-color: #2f5bb7;
+    background-color: #47fe41;
+    background-image: -webkit-linear-gradient(top,#47fe41,#36b02f);
+    background-image: linear-gradient(top,#47fe41,#36b02f);
+    border: 1px solid #36b02f;
+    border-bottom-color: #36b02f;
+}
+
+.extension-schedule-mail-btn {
+    text-align:center;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    cursor: default;
+    font-size: 11px;
+    font-family: 'Open Sans', Helvetica, Arial, 'Liberation Sans', sans-serif;
+    font-weight: bold;
+    margin-right: 10px;
+    height: 29px;
+    line-height: 28px;
+    min-width: 54px;
+    outline: 0;
+    padding: 0 8px;
+    position: relative;
+    display: inline-block;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: #47fe41;
+    background-image: -webkit-linear-gradient(top,#47fe41, #36b02f);
+    background-image: linear-gradient(top,#47fe41,#36b02f);
+    border: 1px solid #36b02f;
+    color: #fff;
 }
 
 /* The Modal (background) */
@@ -41,9 +65,6 @@
     z-index: 100; /* Sit on top */
     left: 0;
     top: 0;
-    /*width: 100%; !* Full width *!*/
-    /*height: 100%; !* Full height *!*/
-    /*overflow: auto; !* Enable scroll if needed *!*/
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
@@ -51,12 +72,20 @@
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto; /* 15% from the top and centered */
-    padding: 10px;
+    margin: 0 auto; /* 2% from the top and centered */
+    padding: 5px;
     border: 1px solid #888;
-    /*width: 50%; !* Could be more or less, depending on screen size *!*/
+    overflow: scroll;
 }
 
+.modal-content p,h3 {
+    text-align: center;
+}
+
+.modal-content div.flatpickr-calendar {
+    display: block;
+    margin : 0 auto;
+}
 /* The Close Button */
 .close {
     color: #aaa;
@@ -70,4 +99,25 @@
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+#extension_settings {
+    width: 150px;
+}
+
+#save_extension_settings {
+    text-align:center;
+    color: #fff;
+    margin: 10px 5px;
+    padding: 5px;
+    border-radius: 2px;
+    background-color: #6496c8;
+    text-shadow: -1px 1px #417cb8;
+    border: none;
+    font-size: 11px;
+    font-weight: bolder;
 }

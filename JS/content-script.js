@@ -4,6 +4,8 @@ var areaOfInterest = '';
 var preferredWidth = 0;
 
 $(document).ready(function () {
+    var documentBody = $("body");
+
     $(document).arrive("tr.n1tfz", function() {
         areaOfInterest = $(this).children('td:first');
         updateView();
@@ -13,11 +15,11 @@ $(document).ready(function () {
         updateView();
     });
 
-    $('body').on('click', '#extension_schedule_btn', function() {
+    documentBody.on('click', '#extension_schedule_btn', function() {
         scheduleButtonClickAction();
     });
 
-    $('body').on('click', '#close_scheduler_view', function() {
+    documentBody.on('click', '#close_scheduler_view', function() {
         $("#scheduler_view").hide();
     });
 });
@@ -32,29 +34,32 @@ var updateView = function () {
             $("#extension_schedule_btn").remove();
         }
     });
-}
+};
 
 var scheduleButtonClickAction = function () {
     $('#schedule_date_time_picker').flatpickr({
         inline:true,
         minDate: new Date(),
-        enableTime: true,
+        enableTime: true
     });
 
     var schedulerView = $("#scheduler_view");
     schedulerView.css('width', preferredWidth);
     schedulerView.show();
-}
+};
 
 var setupScheduler = function () {
     var scheduleButton = $("<button id='extension_schedule_btn'></button>")
         .text('Schedule')
-        .addClass('extensionScheduleBtn');
-    $("#extension_schedule_btn").remove();
+        .addClass('extension-schedule-btn');
+
+    if (areaOfInterest.has('#extension_schedule_btn').length) {
+        $("#extension_schedule_btn").remove();
+    }
 
     areaOfInterest.append(scheduleButton);
     loadMailScheduler();
-}
+};
 
 var loadMailScheduler = function () {
     $.get(chrome.extension.getURL('/Html/scheduler.html'), function(data) {
@@ -62,4 +67,4 @@ var loadMailScheduler = function () {
         parent.append(data);
         preferredWidth = parent.width();
     });
-}
+};
