@@ -5,7 +5,7 @@
   "icons": { "128": "Images/email_icon.png" },
   "background": {
     "scripts": ["JS/background.js"],
-    "persistent": false
+    "persistent": true
   },
   "content_scripts": [
     {
@@ -38,9 +38,6 @@
     "default_popup": "Html/popup.html"
   },
   "web_accessible_resources": [
-    "CSS/extension_styles.css",
-    "JS/Libraries/flatpickr/flatpickr.min.css",
-    "JS/Libraries/flatpickr/flatpickr.min.js",
     "Html/scheduler.html"
   ],
   "manifest_version": 2

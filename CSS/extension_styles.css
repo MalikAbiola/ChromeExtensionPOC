@@ -40,22 +40,13 @@
     cursor: default;
     font-size: 11px;
     font-family: 'Open Sans', Helvetica, Arial, 'Liberation Sans', sans-serif;
-    font-weight: bold;
-    margin-right: 10px;
-    height: 29px;
-    line-height: 28px;
-    min-width: 54px;
-    outline: 0;
-    padding: 0 8px;
-    position: relative;
-    display: inline-block;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    background-color: #47fe41;
-    background-image: -webkit-linear-gradient(top,#47fe41, #36b02f);
-    background-image: linear-gradient(top,#47fe41,#36b02f);
-    border: 1px solid #36b02f;
+    border: 1px solid #417cb8;
     color: #fff;
+    margin: 10px 5px;
+    padding: 5px;
+    background-color: #6496c8;
+    text-shadow: -1px 1px #417cb8;
+    font-weight: bolder;
 }
 
 /* The Modal (background) */
@@ -80,6 +71,8 @@
 
 .modal-content p,h3 {
     text-align: center;
+    margin-top: 0;
+    margin-bottom: 1px;
 }
 
 .modal-content div.flatpickr-calendar {
@@ -120,4 +113,13 @@
     border: none;
     font-size: 11px;
     font-weight: bolder;
+}
+
+#schedule_success {
+    display: none;
+}
+
+#schedule_success h3 {
+    vertical-align: middle;
+    text-align: center;
 }
